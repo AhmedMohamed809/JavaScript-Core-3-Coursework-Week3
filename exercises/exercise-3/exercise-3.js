@@ -6,3 +6,33 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+let [item1, item2, item3, item4, item5, item6] = order;
+console.log(`QTY     ITEM                TOTAL`);
+console.log(
+  `${item1.quantity}       ${item1.itemName}           ${item1.unitPrice}`
+);
+console.log(
+  `${item2.quantity}       ${item2.itemName}           ${item2.unitPrice}`
+);
+console.log(
+  `${item3.quantity}       ${item3.itemName}        ${item3.unitPrice}`
+);
+console.log(`${item4.quantity}       ${item4.itemName}    ${item4.unitPrice}`);
+console.log(
+  `${item5.quantity}       ${item5.itemName}          ${item5.unitPrice}`
+);
+console.log(
+  `${item6.quantity}       ${item6.itemName}          ${item6.unitPrice}`
+);
+console.log(
+  `                                                              
+ Total : ${getTotal(order)}
+  `
+);
+function getTotal(order) {
+  let sum = 0;
+  let orderPrice = order.forEach((element) => {
+    sum += element.unitPrice * element.quantity;
+  });
+  return sum;
+}
